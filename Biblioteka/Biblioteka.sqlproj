@@ -63,6 +63,8 @@
     <Folder Include="StoredProcedures" />
     <Folder Include="Triggers" />
     <Folder Include="Views" />
+    <Folder Include="Data" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Library.sql" />
@@ -82,5 +84,9 @@
     <Build Include="Views\vw_BorrowedBooksByMember.sql" />
     <Build Include="Views\vw_OverdueBooks.sql" />
     <Build Include="Views\vw_ActivePenalties.sql" />
+    <None Include="Data\SeedData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>
