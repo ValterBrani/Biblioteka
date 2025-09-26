@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Biblioteka/Biblioteka.sqlproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
