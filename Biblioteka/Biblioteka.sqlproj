@@ -77,5 +77,6 @@
     <Build Include="StoredProcedures\sp_BorrowBook.sql" />
     <Build Include="StoredProcedures\sp_ReturnBook.sql" />
     <Build Include="Triggers\tr_Borrowings_Insert.sql" />
+    <Build Include="Triggers\tr_Borrowings_Update.sql" />
   </ItemGroup>
 </Project>
