@@ -58,6 +58,7 @@
     <Folder Include="Properties" />
     <Folder Include="Schema" />
     <Folder Include="Tables" />
+    <Folder Include="Indexes" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Library.sql" />
@@ -68,5 +69,6 @@
     <Build Include="Tables\Returns.sql" />
     <Build Include="Tables\PenaltyPolicies.sql" />
     <Build Include="Tables\BookAuthors.sql" />
+    <Build Include="Indexes\Indexes.sql" />
   </ItemGroup>
 </Project>
