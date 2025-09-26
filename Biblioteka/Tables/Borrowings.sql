@@ -1,0 +1,12 @@
+CREATE TABLE Library.Borrowings (
+BorrowingId INT IDENTITY(1,1) PRIMARY KEY,
+MemberId INT NOT NULL,
+BookId INT NOT NULL,
+BorrowDate DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
+DueDate DATETIME2 NOT NULL,
+ReturnDate DATETIME2 NULL,
+Penalty DECIMAL(10,2) NULL DEFAULT(0),
+CONSTRAINT FK_Borrowings_Member FOREIGN KEY (MemberId) REFERENCES Library.Members(MemberId),
+CONSTRAINT FK_Borrowings_Book FOREIGN KEY (BookId) REFERENCES Library.Books(BookId),
+CONSTRAINT CHK_Borrowings_Dates CHECK (DueDate >= BorrowDate)
+);
