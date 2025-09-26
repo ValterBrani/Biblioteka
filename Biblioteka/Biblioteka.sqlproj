@@ -81,5 +81,6 @@
     <Build Include="Triggers\tr_Borrowings_Update.sql" />
     <Build Include="Views\vw_BorrowedBooksByMember.sql" />
     <Build Include="Views\vw_OverdueBooks.sql" />
+    <Build Include="Views\vw_ActivePenalties.sql" />
   </ItemGroup>
 </Project>
