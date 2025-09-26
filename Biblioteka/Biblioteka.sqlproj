@@ -62,5 +62,6 @@
   <ItemGroup>
     <Build Include="Schema\Library.sql" />
     <Build Include="Tables\Authors.sql" />
+    <Build Include="Tables\Books.sql" />
   </ItemGroup>
 </Project>
