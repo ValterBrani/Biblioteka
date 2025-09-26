@@ -59,6 +59,7 @@
     <Folder Include="Schema" />
     <Folder Include="Tables" />
     <Folder Include="Indexes" />
+    <Folder Include="Functions" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Library.sql" />
@@ -70,5 +71,6 @@
     <Build Include="Tables\PenaltyPolicies.sql" />
     <Build Include="Tables\BookAuthors.sql" />
     <Build Include="Indexes\Indexes.sql" />
+    <Build Include="Functions\fn_CalculatePenalty.sql" />
   </ItemGroup>
 </Project>
