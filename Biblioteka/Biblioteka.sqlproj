@@ -62,6 +62,7 @@
     <Folder Include="Functions" />
     <Folder Include="StoredProcedures" />
     <Folder Include="Triggers" />
+    <Folder Include="Views" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Library.sql" />
@@ -78,5 +79,6 @@
     <Build Include="StoredProcedures\sp_ReturnBook.sql" />
     <Build Include="Triggers\tr_Borrowings_Insert.sql" />
     <Build Include="Triggers\tr_Borrowings_Update.sql" />
+    <Build Include="Views\vw_BorrowedBooksByMember.sql" />
   </ItemGroup>
 </Project>
