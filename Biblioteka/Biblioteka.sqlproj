@@ -57,8 +57,10 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Schema" />
+    <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Library.sql" />
+    <Build Include="Tables\Authors.sql" />
   </ItemGroup>
 </Project>
