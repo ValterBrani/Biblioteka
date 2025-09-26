@@ -60,6 +60,7 @@
     <Folder Include="Tables" />
     <Folder Include="Indexes" />
     <Folder Include="Functions" />
+    <Folder Include="StoredProcedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Library.sql" />
@@ -72,5 +73,6 @@
     <Build Include="Tables\BookAuthors.sql" />
     <Build Include="Indexes\Indexes.sql" />
     <Build Include="Functions\fn_CalculatePenalty.sql" />
+    <Build Include="StoredProcedures\sp_BorrowBook.sql" />
   </ItemGroup>
 </Project>
