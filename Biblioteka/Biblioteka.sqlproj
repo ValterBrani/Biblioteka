@@ -66,5 +66,6 @@
     <Build Include="Tables\Members.sql" />
     <Build Include="Tables\Borrowings.sql" />
     <Build Include="Tables\Returns.sql" />
+    <Build Include="Tables\PenaltyPolicies.sql" />
   </ItemGroup>
 </Project>
