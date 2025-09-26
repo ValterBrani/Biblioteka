@@ -74,5 +74,7 @@
     <Build Include="Indexes\Indexes.sql" />
     <Build Include="Functions\fn_CalculatePenalty.sql" />
     <Build Include="StoredProcedures\sp_BorrowBook.sql" />
+    <Build Include="StoredProcedures\sp_ReturnBook.sql" />
+    <Build Include="StoredProcedures\toto.sql" />
   </ItemGroup>
 </Project>
