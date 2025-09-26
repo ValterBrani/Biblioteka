@@ -61,6 +61,7 @@
     <Folder Include="Indexes" />
     <Folder Include="Functions" />
     <Folder Include="StoredProcedures" />
+    <Folder Include="Triggers" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Library.sql" />
@@ -75,6 +76,6 @@
     <Build Include="Functions\fn_CalculatePenalty.sql" />
     <Build Include="StoredProcedures\sp_BorrowBook.sql" />
     <Build Include="StoredProcedures\sp_ReturnBook.sql" />
-    <Build Include="StoredProcedures\toto.sql" />
+    <Build Include="Triggers\tr_Borrowings_Insert.sql" />
   </ItemGroup>
 </Project>
