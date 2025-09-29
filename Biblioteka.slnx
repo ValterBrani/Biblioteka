@@ -1,5 +1,8 @@
 <Solution>
-  <Project Path="Biblioteka/Biblioteka.sqlproj">
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Biblioteka/Biblioteka.sqlproj" Id="9c5fffb7-48cf-48c4-93d4-99763b510994">
     <Build />
     <Deploy />
   </Project>
