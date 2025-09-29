@@ -1,28 +1,36 @@
 CREATE PROCEDURE Library.sp_BorrowBook
-    @MemberId INT,
-    @BookId INT,
-    @BorrowDate DATETIME2 = NULL,
-    @DueDate DATETIME2,
-    @BorrowingId INT OUTPUT
+    @MemberId           INT,
+    @BookId             INT,
+    @BorrowDate         DATETIME2 = NULL,
+    @DueDate            DATETIME2,
+    @BorrowingId        INT OUTPUT
 AS
 BEGIN
     SET NOCOUNT ON;
 
+    -- Définir la date d'emprunt par défaut
     IF @BorrowDate IS NULL
         SET @BorrowDate = SYSUTCDATETIME();
 
     BEGIN TRY
         BEGIN TRANSACTION;
 
-        -- Vérifier membre actif
-        IF NOT EXISTS (SELECT 1 FROM Library.Members WHERE MemberId = @MemberId AND IsActive = 1)
+        -- Vérifier que le membre est actif
+        IF NOT EXISTS (
+            SELECT 1 
+            FROM Library.Members 
+            WHERE MemberId = @MemberId 
+                AND IsActive = 1
+        )
         BEGIN
             THROW 51000, 'Membre introuvable ou inactif.', 1;
         END
 
-        -- Vérifier disponibilité
+        -- Vérifier la disponibilité du livre
         DECLARE @available INT;
-        SELECT @available = AvailableCopies FROM Library.Books WHERE BookId = @BookId;
+        SELECT @available = AvailableCopies 
+        FROM Library.Books 
+        WHERE BookId = @BookId;
 
         IF @available IS NULL
         BEGIN
@@ -34,12 +42,12 @@ BEGIN
             THROW 51002, 'Aucune copie disponible pour ce livre.', 1;
         END
 
-        -- Décrémenter disponible
+        -- Décrémenter les copies disponibles
         UPDATE Library.Books
         SET AvailableCopies = AvailableCopies - 1
         WHERE BookId = @BookId;
 
-        -- Insérer emprunt
+        -- Insérer le nouvel emprunt
         INSERT INTO Library.Borrowings (MemberId, BookId, BorrowDate, DueDate)
         VALUES (@MemberId, @BookId, @BorrowDate, @DueDate);
 
@@ -50,6 +58,7 @@ BEGIN
     BEGIN CATCH
         IF XACT_STATE() <> 0
             ROLLBACK TRANSACTION;
+        
         DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
         DECLARE @ErrNum INT = ERROR_NUMBER();
         RAISERROR('Erreur sp_BorrowBook: %s', 16, 1, @ErrMsg);
